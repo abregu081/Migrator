@@ -305,19 +305,9 @@ def exportar_todos_los_medios_a_access():
             ruta = _nombre_archivo_access(medio["nombre"], medio["id"], CARPETA_ACCESS)
             print(f"Procesando medio {medio['nombre']}")
             
-            # Get last execution date or default to 40 days ago
+            
             fecha_desde = datetime.now().date() - timedelta(days=40)
-            conn_str = rf"Driver={{Microsoft Access Driver (*.mdb, *.accdb)}};Dbq={ruta};"
-            
-            with pyodbc.connect(conn_str, autocommit=True) as conn, conn.cursor() as c:
-                try:
-                    c.execute("SELECT TOP 1 ultima_ejecucion FROM servicio ORDER BY id DESC")
-                    row = c.fetchone()
-                    if row and row[0]:
-                        fecha_desde = row[0].date()
-                except Exception as e:
-                    print(f"Using default date range (40 days) for {medio['nombre']}")
-            
+
             registros = Obtener_Registros_Medios_Produccion(medio["id"], fecha_desde)
             print(f"Registros obtenidos para el medio {medio['nombre']}: {len(registros)}")
             

@@ -1,2 +1,0 @@
-Log de Evento errores - ConsultaSQL
-Error processing medio AFT: ('HY000', "[HY000] [Microsoft][Controlador ODBC Microsoft Access] No se pudo encontrar el archivo '(desconocido)'. (-1811) (SQLDriverConnect); [HY000] [Microsoft][Controlador ODBC Microsoft Access] No se pudo encontrar el archivo '(desconocido)'. (-1811)")
