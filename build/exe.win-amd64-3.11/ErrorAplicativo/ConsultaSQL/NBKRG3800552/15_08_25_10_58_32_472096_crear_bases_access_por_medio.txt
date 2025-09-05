@@ -1,0 +1,2 @@
+Log de Evento errores - ConsultaSQL
+('HY000', "[HY000] [Microsoft][Controlador ODBC Microsoft Access] No se pudo encontrar el archivo '(desconocido)'. (-1811) (SQLDriverConnect); [HY000] [Microsoft][Controlador ODBC Microsoft Access] No se pudo encontrar el archivo '(desconocido)'. (-1811)")

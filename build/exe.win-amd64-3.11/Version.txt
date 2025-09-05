@@ -1,0 +1,7 @@
+Versión: 1.10
+
+Migrator de SQL a Access
+
+#La Misma presenta un Bug, no permite eliminar registros viejos y superponer los nuevos
+
+-Tomas Migor: Depurar en Casa

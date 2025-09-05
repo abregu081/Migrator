@@ -1,0 +1,12 @@
+Voy a dejar este documento como guia de las funcion que voy a estar utilizando segun avance con mi codigo
+
+ObtenerMediosDeProduccion()  // Realiza una consula en la tabla de medios para ver cuales son aquellos medios que estan colocados actualmente
+
+crear_bases_access_por_medio() // Se encarga de genera la db en access del medio que se haya encontrado en la consulta pasada junto con sus tablas correspondientes
+
+Obtener_Registros_Medios_Produccion() // Extrae los registros segun el medio selecionado y lo podemos filtrar segun su fecha
+
+nsertar_registros_en_access() // inserta los registros obtenidos y actualiza la tabla de servio para verificar cuando fue la ultima ejecucion
+
+Normalizar() // Normaliza la la insercion de los datos a las columnas
+
