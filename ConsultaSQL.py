@@ -32,10 +32,10 @@ def ObtenerMediosDeProduccion():
             cursor.execute(
                 """
                 SELECT
-                    idMedios_de_produccion AS id,
-                    nombre,           
-                    descripcion,
-                    linea_produccion_id
+                    ID_Medios_de_produccion AS id,
+                    Nombre,           
+                    Descripcion,
+                    Linea_produccion_id
                 FROM medios_de_produccion
                 """
             )
@@ -53,7 +53,7 @@ def crear_bases_access_por_medio(lista_medios,carpeta_destino: str = CARPETA_ACC
     os.makedirs(carpeta_destino, exist_ok=True)
 
     for medio in lista_medios:
-        ruta = _nombre_archivo_access(medio["nombre"], medio["id"], carpeta_destino)
+        ruta = _nombre_archivo_access(medio["Nombre"], medio["id"], carpeta_destino)
         if os.path.exists(ruta):
             continue 
         try:
@@ -302,14 +302,14 @@ def exportar_todos_los_medios_a_access():
 
     for medio in medios:
         try:
-            ruta = _nombre_archivo_access(medio["nombre"], medio["id"], CARPETA_ACCESS)
-            print(f"Procesando medio {medio['nombre']}")
+            ruta = _nombre_archivo_access(medio["Nombre"], medio["id"], CARPETA_ACCESS)
+            print(f"Procesando medio {medio['Nombre']}")
             
             
             fecha_desde = datetime.now().date() - timedelta(days=40)
 
             registros = Obtener_Registros_Medios_Produccion(medio["id"], fecha_desde)
-            print(f"Registros obtenidos para el medio {medio['nombre']}: {len(registros)}")
+            print(f"Registros obtenidos para el medio {medio['Nombre']}: {len(registros)}")
             
             insertar_registros_en_access(registros, ruta)
             print(f"Registros insertados correctamente en {ruta}")
@@ -317,7 +317,7 @@ def exportar_todos_los_medios_a_access():
         except Exception as e:
             Controller_Error.Logs_Error.CapturarEvento(
                 "ConsultaSQL", "exportar_todos_los_medios_a_access",
-                f"Error processing medio {medio['nombre']}: {e}"
+                f"Error processing medio {medio['Nombre']}: {e}"
             )
             continue
 
